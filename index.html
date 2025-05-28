@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TaskMaster</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Flatpickr CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+  />
+</head>
+<body>
+  <div class="container">
+    <div class="stats-container">
+      <div class="details">
+        <h1>TaskMaster</h1>
+        <p>Keep it up</p>
+        <div id="progressBar">
+          <div id="progress"></div>
+        </div>
+      </div>
+      <div class="stats-numbers">
+        <p id="numbers">0/0</p>
+      </div>
+    </div>
+
+    <form action="">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Write your task"
+        autocomplete="off"
+      />
+      <!-- New Date input -->
+      <input type="text" id="taskDate" placeholder="Select date" readonly />
+      <button id="newTask" type="submit">+</button>
+      <button id="clearAll" type="button">Clear All</button>
+
+    </form>
+    <form id="aiForm" style="margin-top:40px; width:100%; display:flex; gap:10px; align-items:center;">
+  <input
+    type="text"
+    id="aiInput"
+    placeholder="Ask AI Assistant (e.g. Add buy milk)"
+    autocomplete="off"
+    style="flex:1; padding:16px; background-color: var(--secondaryBackground); border:1px solid var(--purple); border-radius:10px; color: var(--text);"
+  />
+  <button type="submit" style="padding:16px 20px; background-color: var(--purple); border-radius: 10px; font-weight:bold; color: var(--text); border:none; cursor:pointer;">
+    Go
+  </button>
+</form>
+<div id="aiResponse" style="margin-top:10px; color: var(--teal); font-weight: bold; min-height: 24px;"></div>
+
+    <ul id="task-list"></ul>
+  </div>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <footer class="footer">
+      <p>© 2025 TaskMaster App. Built with 🚀 by Rameez</p>
+  </footer>
+</body>
+</html>
