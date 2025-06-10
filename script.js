@@ -116,8 +116,23 @@ const updateTasksList = () => {
       `;
     listItem.addEventListener("change", () => toggleTaskComplete(index));
     taskList.appendChild(listItem);
+    
   });
+  enableDragAndDrop();
 };
+const enableDragAndDrop=()=>{
+  const taskList=document.getElementById('task-list');
+  Sortable.create(taskList,{
+    animation:150,
+    onEnd:function(evt){
+      const [movedTask]=tasks.splice(evt.oldIndex,1);
+      tasks.splice(evt.newIndex,0,movedTask);
+      saveTasks();
+      updateTasksList();
+      updateStats();
+    }
+  })
+}
 
 document.getElementById("newTask").addEventListener("click", function (e) {
   e.preventDefault();
